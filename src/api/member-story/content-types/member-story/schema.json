@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "member_stories",
+  "info": {
+    "singularName": "member-story",
+    "pluralName": "member-stories",
+    "displayName": "Member Stories"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "content": {
+      "type": "blocks",
+      "required": true
+    },
+    "title": {
+      "type": "string"
+    },
+    "memberName": {
+      "type": "string"
+    },
+    "posterImage": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}
