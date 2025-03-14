@@ -566,6 +566,40 @@ export interface ApiMemberStoryMemberStory extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiVideoFeedVideoFeed extends Struct.CollectionTypeSchema {
+  collectionName: 'video_feeds';
+  info: {
+    displayName: 'Video Feed';
+    pluralName: 'video-feeds';
+    singularName: 'video-feed';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    keyVerses: Schema.Attribute.Blocks;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::video-feed.video-feed'
+    > &
+      Schema.Attribute.Private;
+    prayerTopics: Schema.Attribute.Blocks;
+    publishedAt: Schema.Attribute.DateTime;
+    testYourself: Schema.Attribute.Blocks;
+    thumbnailPicture: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    videoID: Schema.Attribute.UID & Schema.Attribute.Required;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1081,6 +1115,7 @@ declare module '@strapi/strapi' {
       'api::category.category': ApiCategoryCategory;
       'api::global.global': ApiGlobalGlobal;
       'api::member-story.member-story': ApiMemberStoryMemberStory;
+      'api::video-feed.video-feed': ApiVideoFeedVideoFeed;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "video_feeds",
+  "info": {
+    "singularName": "video-feed",
+    "pluralName": "video-feeds",
+    "displayName": "Video Feed"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "videoID": {
+      "type": "uid",
+      "required": true
+    },
+    "thumbnailPicture": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "keyVerses": {
+      "type": "blocks"
+    },
+    "prayerTopics": {
+      "type": "blocks"
+    },
+    "testYourself": {
+      "type": "blocks"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}
