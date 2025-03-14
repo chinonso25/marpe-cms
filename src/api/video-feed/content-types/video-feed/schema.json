@@ -4,7 +4,8 @@
   "info": {
     "singularName": "video-feed",
     "pluralName": "video-feeds",
-    "displayName": "Video Feed"
+    "displayName": "Video Feed",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,13 +16,13 @@
       "required": true
     },
     "thumbnailPicture": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+      ]
     },
     "keyVerses": {
       "type": "blocks"
@@ -33,6 +34,12 @@
       "type": "blocks"
     },
     "title": {
+      "type": "string"
+    },
+    "publishDate": {
+      "type": "date"
+    },
+    "preacher": {
       "type": "string"
     }
   }

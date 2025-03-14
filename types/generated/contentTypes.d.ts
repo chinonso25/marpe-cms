@@ -569,6 +569,7 @@ export interface ApiMemberStoryMemberStory extends Struct.CollectionTypeSchema {
 export interface ApiVideoFeedVideoFeed extends Struct.CollectionTypeSchema {
   collectionName: 'video_feeds';
   info: {
+    description: '';
     displayName: 'Video Feed';
     pluralName: 'video-feeds';
     singularName: 'video-feed';
@@ -588,6 +589,8 @@ export interface ApiVideoFeedVideoFeed extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     prayerTopics: Schema.Attribute.Blocks;
+    preacher: Schema.Attribute.String;
+    publishDate: Schema.Attribute.Date;
     publishedAt: Schema.Attribute.DateTime;
     testYourself: Schema.Attribute.Blocks;
     thumbnailPicture: Schema.Attribute.Media<'images' | 'files'> &
