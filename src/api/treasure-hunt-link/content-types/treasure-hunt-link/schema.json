@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "treasure_hunt_links",
+  "info": {
+    "singularName": "treasure-hunt-link",
+    "pluralName": "treasure-hunt-links",
+    "displayName": "Treasure Hunt Link"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "linkUrl": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

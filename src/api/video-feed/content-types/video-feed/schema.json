@@ -34,13 +34,16 @@
       "type": "blocks"
     },
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "publishDate": {
-      "type": "date"
+      "type": "date",
+      "required": true
     },
     "preacher": {
-      "type": "string"
+      "type": "string",
+      "required": true
     }
   }
 }
