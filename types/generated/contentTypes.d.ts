@@ -404,6 +404,7 @@ export interface ApiEventsFeedEventsFeed extends Struct.CollectionTypeSchema {
 export interface ApiMarpeUncutMarpeUncut extends Struct.CollectionTypeSchema {
   collectionName: 'marpe_uncuts';
   info: {
+    description: '';
     displayName: 'Marpe Uncut';
     pluralName: 'marpe-uncuts';
     singularName: 'marpe-uncut';
@@ -425,6 +426,7 @@ export interface ApiMarpeUncutMarpeUncut extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     posterImage: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
