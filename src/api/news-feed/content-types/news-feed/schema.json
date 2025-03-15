@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "news_feeds",
+  "info": {
+    "singularName": "news-feed",
+    "pluralName": "news-feeds",
+    "displayName": "News Feed"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "Content": {
+      "type": "blocks",
+      "required": true
+    },
+    "Date": {
+      "required": true,
+      "type": "date"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Poster": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

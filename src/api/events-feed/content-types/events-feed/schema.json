@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events_feeds",
+  "info": {
+    "singularName": "events-feed",
+    "pluralName": "events-feeds",
+    "displayName": "Events Feed"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "Content": {
+      "type": "blocks",
+      "required": true
+    },
+    "Date": {
+      "type": "date",
+      "required": true
+    },
+    "Description": {
+      "type": "text",
+      "required": false
+    },
+    "Poster": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * author service.
+ * events-feed service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::author.author');
+module.exports = createCoreService('api::events-feed.events-feed');
