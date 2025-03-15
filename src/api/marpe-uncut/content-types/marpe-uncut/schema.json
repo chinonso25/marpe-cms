@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "marpe_uncuts",
+  "info": {
+    "singularName": "marpe-uncut",
+    "pluralName": "marpe-uncuts",
+    "displayName": "Marpe Uncut"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "youtubeLink": {
+      "type": "string",
+      "required": true
+    },
+    "posterImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "Content": {
+      "type": "blocks"
+    },
+    "Description": {
+      "type": "text"
+    }
+  }
+}

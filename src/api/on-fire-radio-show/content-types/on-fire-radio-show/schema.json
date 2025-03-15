@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "on_fire_radio_shows",
+  "info": {
+    "singularName": "on-fire-radio-show",
+    "pluralName": "on-fire-radio-shows",
+    "displayName": "OnFire Radio Shows"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "type": "text",
+      "required": true
+    },
+    "youtubePlaylistLink": {
+      "type": "string",
+      "required": true
+    },
+    "poster": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

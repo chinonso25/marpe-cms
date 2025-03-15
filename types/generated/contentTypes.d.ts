@@ -401,6 +401,37 @@ export interface ApiEventsFeedEventsFeed extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiMarpeUncutMarpeUncut extends Struct.CollectionTypeSchema {
+  collectionName: 'marpe_uncuts';
+  info: {
+    displayName: 'Marpe Uncut';
+    pluralName: 'marpe-uncuts';
+    singularName: 'marpe-uncut';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Content: Schema.Attribute.Blocks;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Description: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::marpe-uncut.marpe-uncut'
+    > &
+      Schema.Attribute.Private;
+    posterImage: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    youtubeLink: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface ApiMemberStoryMemberStory extends Struct.CollectionTypeSchema {
   collectionName: 'member_stories';
   info: {
@@ -465,10 +496,44 @@ export interface ApiNewsFeedNewsFeed extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiOnFireRadioShowOnFireRadioShow
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'on_fire_radio_shows';
+  info: {
+    displayName: 'OnFire Radio Shows';
+    pluralName: 'on-fire-radio-shows';
+    singularName: 'on-fire-radio-show';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Description: Schema.Attribute.Text & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::on-fire-radio-show.on-fire-radio-show'
+    > &
+      Schema.Attribute.Private;
+    poster: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    youtubePlaylistLink: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface ApiTreasureHuntLinkTreasureHuntLink
   extends Struct.SingleTypeSchema {
   collectionName: 'treasure_hunt_links';
   info: {
+    description: '';
     displayName: 'Treasure Hunt Link';
     pluralName: 'treasure-hunt-links';
     singularName: 'treasure-hunt-link';
@@ -480,7 +545,7 @@ export interface ApiTreasureHuntLinkTreasureHuntLink
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    linkUrl: Schema.Attribute.String & Schema.Attribute.Required;
+    linkUrl: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1041,8 +1106,10 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::events-feed.events-feed': ApiEventsFeedEventsFeed;
+      'api::marpe-uncut.marpe-uncut': ApiMarpeUncutMarpeUncut;
       'api::member-story.member-story': ApiMemberStoryMemberStory;
       'api::news-feed.news-feed': ApiNewsFeedNewsFeed;
+      'api::on-fire-radio-show.on-fire-radio-show': ApiOnFireRadioShowOnFireRadioShow;
       'api::treasure-hunt-link.treasure-hunt-link': ApiTreasureHuntLinkTreasureHuntLink;
       'api::video-feed.video-feed': ApiVideoFeedVideoFeed;
       'plugin::content-releases.release': PluginContentReleasesRelease;

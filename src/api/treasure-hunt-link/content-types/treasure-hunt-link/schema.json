@@ -4,7 +4,8 @@
   "info": {
     "singularName": "treasure-hunt-link",
     "pluralName": "treasure-hunt-links",
-    "displayName": "Treasure Hunt Link"
+    "displayName": "Treasure Hunt Link",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,7 +13,7 @@
   "attributes": {
     "linkUrl": {
       "type": "string",
-      "required": true
+      "required": false
     }
   }
 }
