@@ -4,7 +4,8 @@
   "info": {
     "singularName": "on-fire-radio-show",
     "pluralName": "on-fire-radio-shows",
-    "displayName": "OnFire Radio Shows"
+    "displayName": "OnFire Radio Shows",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,20 +19,20 @@
       "type": "text",
       "required": true
     },
-    "youtubePlaylistLink": {
+    "playlistID": {
       "type": "string",
       "required": true
     },
     "poster": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+      ]
     }
   }
 }

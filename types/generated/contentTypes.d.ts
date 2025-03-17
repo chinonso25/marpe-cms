@@ -502,6 +502,7 @@ export interface ApiOnFireRadioShowOnFireRadioShow
   extends Struct.CollectionTypeSchema {
   collectionName: 'on_fire_radio_shows';
   info: {
+    description: '';
     displayName: 'OnFire Radio Shows';
     pluralName: 'on-fire-radio-shows';
     singularName: 'on-fire-radio-show';
@@ -520,6 +521,7 @@ export interface ApiOnFireRadioShowOnFireRadioShow
       'api::on-fire-radio-show.on-fire-radio-show'
     > &
       Schema.Attribute.Private;
+    playlistID: Schema.Attribute.String & Schema.Attribute.Required;
     poster: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
       Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
@@ -527,7 +529,6 @@ export interface ApiOnFireRadioShowOnFireRadioShow
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    youtubePlaylistLink: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
