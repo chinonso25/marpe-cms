@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "marpe_dramas",
+  "info": {
+    "singularName": "marpe-drama",
+    "pluralName": "marpe-dramas",
+    "displayName": "Marpe Drama"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "youtubeLink": {
+      "type": "string",
+      "required": true
+    },
+    "posterImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "Content": {
+      "type": "blocks",
+      "required": false
+    },
+    "Description": {
+      "type": "text",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

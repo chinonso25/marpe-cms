@@ -401,6 +401,38 @@ export interface ApiEventsFeedEventsFeed extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiMarpeDramaMarpeDrama extends Struct.CollectionTypeSchema {
+  collectionName: 'marpe_dramas';
+  info: {
+    displayName: 'Marpe Drama';
+    pluralName: 'marpe-dramas';
+    singularName: 'marpe-drama';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Content: Schema.Attribute.Blocks;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Description: Schema.Attribute.Text & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::marpe-drama.marpe-drama'
+    > &
+      Schema.Attribute.Private;
+    posterImage: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    youtubeLink: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface ApiMarpeUncutMarpeUncut extends Struct.CollectionTypeSchema {
   collectionName: 'marpe_uncuts';
   info: {
@@ -1109,6 +1141,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::events-feed.events-feed': ApiEventsFeedEventsFeed;
+      'api::marpe-drama.marpe-drama': ApiMarpeDramaMarpeDrama;
       'api::marpe-uncut.marpe-uncut': ApiMarpeUncutMarpeUncut;
       'api::member-story.member-story': ApiMemberStoryMemberStory;
       'api::news-feed.news-feed': ApiNewsFeedNewsFeed;
