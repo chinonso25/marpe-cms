@@ -404,6 +404,7 @@ export interface ApiEventsFeedEventsFeed extends Struct.CollectionTypeSchema {
 export interface ApiMarpeDramaMarpeDrama extends Struct.CollectionTypeSchema {
   collectionName: 'marpe_dramas';
   info: {
+    description: '';
     displayName: 'Marpe Drama';
     pluralName: 'marpe-dramas';
     singularName: 'marpe-drama';
@@ -416,7 +417,7 @@ export interface ApiMarpeDramaMarpeDrama extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    Description: Schema.Attribute.Text & Schema.Attribute.Required;
+    Description: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

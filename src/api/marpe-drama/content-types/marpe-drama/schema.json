@@ -4,7 +4,8 @@
   "info": {
     "singularName": "marpe-drama",
     "pluralName": "marpe-dramas",
-    "displayName": "Marpe Drama"
+    "displayName": "Marpe Drama",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,12 +16,12 @@
       "required": true
     },
     "posterImage": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "Content": {
       "type": "blocks",
@@ -28,7 +29,7 @@
     },
     "Description": {
       "type": "text",
-      "required": true
+      "required": false
     },
     "title": {
       "type": "string",
