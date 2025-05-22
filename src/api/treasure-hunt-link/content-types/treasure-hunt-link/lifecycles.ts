@@ -12,7 +12,7 @@ export default {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             title: "New Treasure Hunt Link",
-            body: "",
+            body: "Let's study the Word!",
             route: "https://www.marpeassembly.org/sfcdworksheet",
           }),
         }
