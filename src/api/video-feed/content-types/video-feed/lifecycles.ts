@@ -5,19 +5,18 @@ export default {
     const { result } = event;
     try {
       const { title, documentId } = result;
-      const body = JSON.stringify({
+      const rawBody = JSON.stringify({
         title: "Time to Study",
         body: title,
         route: `/MessageHub/MessageScreen/${documentId}`,
       });
 
-      console.log(body);
       await fetch(
         "https://marpe-cloud-functions.chinonso25.workers.dev/send-push-notification",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body,
+          body: rawBody,
         }
       );
     } catch (error) {
