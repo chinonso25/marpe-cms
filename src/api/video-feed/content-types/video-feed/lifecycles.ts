@@ -13,7 +13,7 @@ export default {
           body: JSON.stringify({
             title: "Time to Study",
             body: title,
-            route: `marpe://tabs/MessageHub/MessageScreen/${documentId}`,
+            route: `marpe://MessageHub/MessageScreen/${documentId}`,
           }),
         }
       );
