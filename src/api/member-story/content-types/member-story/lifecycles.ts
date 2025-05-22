@@ -13,7 +13,7 @@ export default {
           body: JSON.stringify({
             title: "New Member Story",
             body: title,
-            route: `marpe://Community/MemberStory/${documentId}`,
+            route: `/Community/MemberStory/${documentId}`,
           }),
         }
       );

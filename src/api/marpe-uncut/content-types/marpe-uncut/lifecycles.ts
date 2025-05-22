@@ -13,7 +13,7 @@ export default {
           body: JSON.stringify({
             title: "New Marpe Content",
             body: title,
-            route: `marpe://Entertainment/MarpeUncut/${documentId}`,
+            route: `/Entertainment/MarpeUncut/${documentId}`,
           }),
         }
       );
