@@ -4,11 +4,11 @@ export default {
   async afterUpdate(event) {
     const { result } = event;
     try {
-      const { title, documentId } = result;
+      const { title, videoID } = result;
       const rawBody = JSON.stringify({
         title: "Time to Study",
         body: title,
-        route: `/MessageHub/MessageScreen/${documentId}`,
+        route: `/MessageHub/MessageScreen/${videoID}`,
       });
 
       await fetch(
