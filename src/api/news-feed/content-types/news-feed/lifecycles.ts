@@ -2,6 +2,7 @@
 
 export default {
   async afterUpdate(event) {
+    // return;
     const { result } = event;
     try {
       const { Title: title, Description: description, documentId } = result;
